@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 import { getProductBySlug, getProducts } from '@/lib/contentClient'
 import { ContentDetail } from '@/components/ContentDetail'
 import { RecommendedList } from '@/components/RecommendedList'
@@ -24,6 +26,13 @@ async function ProductDetailPage({ slug }: { slug: string }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <Link
+        href="/"
+        className="mb-6 inline-flex items-center gap-2 text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        <span>홈으로 돌아가기</span>
+      </Link>
       <ContentDetail product={product} />
       {recommended.length > 0 && (
         <div className="mt-16">
