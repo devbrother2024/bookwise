@@ -10,61 +10,65 @@ alwaysApply: true
 
 ## 사용 방법
 
--   특정 에이전트 참조: @.cursor/rules/agents/{agent-name}
--   특정 템플릿 참조: @.cursor/rules/templates/{template-name}
--   이 인덱스 참조: @.cursor/rules/index
+- 특정 에이전트 참조: @.cursor/rules/agents/{agent-name}
+- 특정 템플릿 참조: @.cursor/rules/templates/{template-name}
+- 이 인덱스 참조: @.cursor/rules/index
 
 ## 사용 가능한 에이전트
 
 ### Product Manager Agent
 
--   **파일**: @.cursor/rules/agents/product-manager
--   **용도**: PRD(Product Requirements Document) 작성
--   **활성화 방법**: Cursor 채팅에서 `@.cursor/rules/agents/product-manager.mdc`를 멘션
--   **출력 경로**: `docs/prd/[프로젝트명]-prd.md`
+- **파일**: @.cursor/rules/agents/product-manager
+- **용도**: PRD(Product Requirements Document) 작성
+- **활성화 방법**: Cursor 채팅에서 `@.cursor/rules/agents/product-manager.mdc`를 멘션
+- **출력 경로**: `docs/prd/[프로젝트명]-prd.md`
 
 ### Tech Spec Manager Agent
 
--   **파일**: @.cursor/rules/agents/tech-spec-manager
--   **용도**: Technical Specification 작성
--   **활성화 방법**: Cursor 채팅에서 `@.cursor/rules/agents/tech-spec-manager.mdc`를 멘션
--   **출력 경로**: `docs/tech-spec/[프로젝트명]-tech-spec.md`
+- **파일**: @.cursor/rules/agents/tech-spec-manager
+- **용도**: Technical Specification 작성
+- **활성화 방법**: Cursor 채팅에서 `@.cursor/rules/agents/tech-spec-manager.mdc`를 멘션
+- **출력 경로**: `docs/tech-spec/[프로젝트명]-tech-spec.md`
 
 ### Developer Agent
 
--   **파일**: @.cursor/rules/agents/developer
--   **용도**: PRD와 Tech Spec 기반 실제 구현
--   **활성화 방법**: Cursor 채팅에서 `@.cursor/rules/agents/developer.mdc`를 멘션
--   **작업 방식**: 문서 기반 점진적 개발
+- **파일**: @.cursor/rules/agents/developer
+- **용도**: PRD와 Tech Spec 기반 실제 구현
+- **활성화 방법**: Cursor 채팅에서 `@.cursor/rules/agents/developer.mdc`를 멘션
+- **작업 방식**: 문서 기반 점진적 개발
 
 ## 사용 가능한 템플릿
 
 ### PRD Template
 
--   **파일**: `.cursor/rules/templates/prd-template.md`
--   **용도**: PRD 문서의 표준 구조
--   **섹션**:
-    -   Goals and Background Context
-    -   Requirements
-    -   User Journeys
-    -   UX Design Principles
-    -   User Interface Design Goals
-    -   Epic List (자동 생성)
-    -   Out of Scope
+- **파일**: `.cursor/rules/templates/prd-template.md`
+- **용도**: PRD 문서의 표준 구조
+- **섹션**:
+  - Goals and Background Context
+  - Requirements
+  - User Journeys
+  - UX Design Principles
+  - User Interface Design Goals
+  - Epic List (자동 생성)
+  - Out of Scope
 
 ### Tech Spec Template
 
--   **파일**: `.cursor/rules/templates/tech-spec-template.md`
--   **용도**: Tech Spec 문서의 표준 구조
--   **섹션**:
-    -   Source Tree Structure
-    -   Technical Approach
-    -   Implementation Stack
-    -   Technical Details
-    -   Development Setup
-    -   Implementation Guide
-    -   Testing Approach
-    -   Deployment Strategy
+- **파일**: `.cursor/rules/templates/tech-spec-template.md`
+- **용도**: Tech Spec 문서의 표준 구조
+- **섹션**:
+  - Source Tree Structure
+  - Technical Approach
+  - Implementation Stack
+  - Technical Details
+  - Development Setup
+  - Implementation Guide
+  - Testing Approach
+  - Deployment Strategy
+
+## 기본 Cursor 규칙
+
+- 공통 개발 규칙은 `@.cursor/rules/basic-dev-setup.mdc` 파일을 참조한다.
 
 ## 빠른 시작
 
@@ -98,9 +102,9 @@ PRD와 Tech Spec을 참고해주세요.
 
 이 프로젝트의 에이전트 규칙은 **Manual** 타입으로 설정되어 있습니다.
 
--   `alwaysApply: false` (에이전트 규칙)
--   명시적으로 멘션해야 활성화됨
--   컨텍스트를 효율적으로 관리
+- `alwaysApply: false` (에이전트 규칙)
+- 명시적으로 멘션해야 활성화됨
+- 컨텍스트를 효율적으로 관리
 
 **이 인덱스 파일만 `alwaysApply: true`로 설정되어 항상 참조 가능합니다.**
 
@@ -108,24 +112,24 @@ PRD와 Tech Spec을 참고해주세요.
 
 ### Product Manager Agent
 
--   대화형 PRD 작성: 단계별로 질문하며 문서를 완성
--   Epic 자동 생성: 요구사항과 사용자 여정 기반으로 자동 생성
--   템플릿 구조 엄격 준수
--   실무 수준의 구체적인 내용 작성
+- 대화형 PRD 작성: 단계별로 질문하며 문서를 완성
+- Epic 자동 생성: 요구사항과 사용자 여정 기반으로 자동 생성
+- 템플릿 구조 엄격 준수
+- 실무 수준의 구체적인 내용 작성
 
 ### Tech Spec Manager Agent
 
--   PRD 기반 기술 명세서 작성
--   간소화된 8개 섹션 구조
--   실제 구현 가능한 수준의 상세함
--   기술 단순성 우선
+- PRD 기반 기술 명세서 작성
+- 간소화된 8개 섹션 구조
+- 실제 구현 가능한 수준의 상세함
+- 기술 단순성 우선
 
 ### Developer Agent
 
--   PRD와 Tech Spec을 철저히 따르는 구현
--   단순하고 명확한 코드 작성
--   점진적 개발 방식
--   문서 기반 개발 흐름
+- PRD와 Tech Spec을 철저히 따르는 구현
+- 단순하고 명확한 코드 작성
+- 점진적 개발 방식
+- 문서 기반 개발 흐름
 
 ## 워크플로우
 
@@ -148,17 +152,17 @@ Tech Spec: @docs/tech-spec/[프로젝트명]-tech-spec.md
 
 ### 파일명 규칙
 
--   PRD: `[프로젝트명]-prd.md` (예: `qr-customization-prd.md`)
--   Tech Spec: `[프로젝트명]-tech-spec.md` (예: `qr-customization-tech-spec.md`)
--   프로젝트명은 소문자와 하이픈(-) 사용
+- PRD: `[프로젝트명]-prd.md` (예: `qr-customization-prd.md`)
+- Tech Spec: `[프로젝트명]-tech-spec.md` (예: `qr-customization-tech-spec.md`)
+- 프로젝트명은 소문자와 하이픈(-) 사용
 
 ## 참고사항
 
--   각 에이전트는 독립적으로 작동하지만, Tech Spec Manager는 PRD를 참조하는 것이 권장됩니다.
--   템플릿 구조는 변경하지 마세요. 에이전트가 이 구조를 기반으로 작동합니다.
--   모든 응답은 실무 수준의 구체성을 목표로 합니다.
--   Epic은 자동으로 생성되므로 별도로 작성하지 않아도 됩니다.
--   문서는 항상 `docs/` 디렉토리 하위에 적절히 생성됩니다.
+- 각 에이전트는 독립적으로 작동하지만, Tech Spec Manager는 PRD를 참조하는 것이 권장됩니다.
+- 템플릿 구조는 변경하지 마세요. 에이전트가 이 구조를 기반으로 작동합니다.
+- 모든 응답은 실무 수준의 구체성을 목표로 합니다.
+- Epic은 자동으로 생성되므로 별도로 작성하지 않아도 됩니다.
+- 문서는 항상 `docs/` 디렉토리 하위에 적절히 생성됩니다.
 
 ## 설정
 
