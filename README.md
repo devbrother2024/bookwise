@@ -37,6 +37,21 @@ BookWise는 운영자가 외부 관리자 페이지에서 등록한 전자책을
 pnpm install
 ```
 
+### 환경 변수 설정
+
+프로젝트 루트에 `.env.local` 파일을 생성하고 다음 환경 변수를 설정하세요:
+
+```env
+LEMON_SQUEEZY_API_KEY=your_api_key_here
+LEMON_SQUEEZY_STORE_ID=your_store_id_here
+```
+
+**Lemon Squeezy 설정 방법:**
+
+1. [Lemon Squeezy](https://lemonsqueezy.com)에 로그인
+2. Settings > API에서 API Key 생성
+3. Store ID는 Store 설정 페이지에서 확인 가능
+
 ### 개발 서버 실행
 
 ```bash
@@ -122,7 +137,9 @@ Vercel을 사용한 배포를 권장합니다:
 
 1. GitHub 저장소에 코드 푸시
 2. [Vercel](https://vercel.com)에서 프로젝트 import
-3. 환경 변수 설정
+3. 환경 변수 설정:
+   - `LEMON_SQUEEZY_API_KEY`: Lemon Squeezy API Key
+   - `LEMON_SQUEEZY_STORE_ID`: Lemon Squeezy Store ID
 4. 자동 배포 완료
 
 자세한 내용은 [Next.js 배포 문서](https://nextjs.org/docs/app/building-your-application/deploying)를 참고하세요.
