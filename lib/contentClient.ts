@@ -22,6 +22,10 @@ if (!storeId) {
   throw new Error('LEMON_SQUEEZY_STORE_ID 환경 변수가 설정되지 않았습니다.')
 }
 
+// storeId는 위에서 체크했으므로 string 타입으로 단언
+const storeIdString: string = storeId
+const storeIdNumber: number = parseInt(storeIdString)
+
 lemonSqueezySetup({
   apiKey,
   onError: (error) => {
@@ -54,7 +58,7 @@ function transformProduct(
     language: undefined, // Lemon Squeezy에는 언어 필드가 없음
     thumbnailUrl: attributes.large_thumb_url || attributes.thumb_url,
     variantId: variantId || 0,
-    storeId: attributes.store_id || parseInt(storeId),
+    storeId: attributes.store_id || storeIdNumber,
   }
 }
 
@@ -84,7 +88,7 @@ export async function getProducts(
   try {
     const { data, error } = await listProducts({
       filter: {
-        storeId: storeId,
+        storeId: storeIdString,
       },
       include: ['variants'],
     })
@@ -146,7 +150,7 @@ export async function getProductBySlug(
     // Lemon Squeezy는 slug로 직접 조회가 안 되므로, 목록에서 찾아야 함
     const { data, error } = await listProducts({
       filter: {
-        storeId: storeId,
+        storeId: storeIdString,
       },
       include: ['variants'],
     })
@@ -182,9 +186,13 @@ export async function createCheckout(
   customPrice?: number,
 ): Promise<CheckoutResponse | null> {
   try {
-    const { data, error } = await createLemonCheckout(storeId, variantId, {
-      customPrice: customPrice ? customPrice * 100 : undefined, // 원화를 센트로 변환
-    })
+    const { data, error } = await createLemonCheckout(
+      storeIdString,
+      variantId,
+      {
+        customPrice: customPrice ? customPrice * 100 : undefined, // 원화를 센트로 변환
+      },
+    )
 
     if (error || !data) {
       console.error('Failed to create checkout:', error)
